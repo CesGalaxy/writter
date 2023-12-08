@@ -1,15 +1,16 @@
-import Post from "@/components/Post";
+import PostCard from "@/components/PostCard";
+import {Post} from "@/types/database";
 
 export default function PostsList({
                                       posts
                                   }: {
-    posts: any[];
+    posts: Post[];
 }) {
     return <div
         className="flex flex-col items-stretch gap-4"
         children={posts.map((post) => {
             return (
-                <Post
+                <PostCard
                     key={post.id}
                     name={post.profile.name}
                     username={post.profile.username}

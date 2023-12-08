@@ -3,7 +3,7 @@
 import {Card, CardHeader, CardBody, CardFooter, Avatar, Button} from "@nextui-org/react";
 import {useState} from "react";
 
-export default function Post({
+export default function PostCard({
                                  name,
                                  username,
                                  avatar_url,

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import {IconCompass, IconHelp, IconHome, IconSettings2, IconUser, TablerIconsProps} from "@tabler/icons-react";
+import PostComposer from "@/components/PostComposer";
 
 export default function Sidebar() {
     return (
@@ -15,6 +16,7 @@ export default function Sidebar() {
                     <SidebarButton href={"/"} icon={IconSettings2}>Options</SidebarButton>
                     <SidebarButton href={"/"} icon={IconHelp}>Help</SidebarButton>
                 </nav>
+                <PostComposer/>
             </nav>
         </aside>
     )
@@ -24,13 +26,15 @@ export function SidebarButton({
     href,
     children,
     icon,
-                              }: {
+}: {
     href: string;
     children: string;
     icon: (props: TablerIconsProps) => JSX.Element;
 }) {
     const Icon = icon;
-    return <Link href={href} className={"py-2 px-4 rounded-full hover:text-slate-300 transition-all hover:bg-slate-900 flex flex-row items-center justify-start gap-2"}>
+    return <Link
+        href={href}
+        className={"py-2 px-4 rounded-full hover:text-slate-300 transition-all hover:bg-slate-900 flex flex-row items-center justify-start gap-2 group hover:ps-6"}>
         <Icon/>
         {children}
     </Link>
