@@ -4,12 +4,12 @@ import PostComposer from "@/components/PostComposer";
 
 export default function Sidebar() {
     return (
-        <aside className={"border-x border-x-slate-600 min-w-[280px] max-w-[500px] w-1/3"}>
-            <nav className={"p-4 flex flex-col gap-8 w-full justify-start items-stretch"}>
-                <header className={"bg-slate-900 rounded-xl p-4"}>
-                    <h1 className={"font-mono font-bold text-2xl text-center"}>[put name here]</h1>
+        <aside className={"sticky md:sticky border-x border-x-slate-600 min-w-[280px] w-full md:max-w-[500px] md:w-1/3"}>
+            <nav className={"md:p-4 flex flex-col md:gap-8 w-full justify-start items-stretch"}>
+                <header className={"bg-slate-900 md:rounded-xl p-1 md:p-4"}>
+                    <h1 className={"font-mono font-bold text-xl md:text-2xl text-center"}>[put name here]</h1>
                 </header>
-                <nav className={"font-medium text-slate-400 w-full text-xl"}>
+                <nav className={"flex justify-around md:justify-start md:block font-medium text-slate-400 w-full text-xl"}>
                     <SidebarButton href={"/"} icon={IconHome}>Home</SidebarButton>
                     <SidebarButton href={"/"} icon={IconCompass}>Explore</SidebarButton>
                     <SidebarButton href={"/"} icon={IconUser}>Profile</SidebarButton>
@@ -34,8 +34,8 @@ export function SidebarButton({
     const Icon = icon;
     return <Link
         href={href}
-        className={"py-2 px-4 rounded-full hover:text-slate-300 transition-all hover:bg-slate-900 flex flex-row items-center justify-start gap-2 group hover:ps-6"}>
-        <Icon/>
-        {children}
+        className={"py-2 px-4 rounded-full hover:text-slate-300 transition-all hover:bg-slate-900 flex flex-row items-center justify-start gap-2 group md:hover:ps-6"}>
+        <span><Icon/></span>
+        <span className={"hidden sm:block"}>{children}</span>
     </Link>
 }

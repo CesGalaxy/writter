@@ -18,9 +18,11 @@ export default async function Home() {
     }
 
     return (
-        <main className="flex min-h-screen flex-row items-stretch justify-stretch bg-slate-800 text-slate-200 lg:px-24 xl:px-48 2xl:px-64">
+        <main className="flex max-h-screen flex-col md:flex-row items-stretch justify-stretch bg-slate-800 text-slate-200 lg:px-24 xl:px-48 2xl:px-64
+        overscroll-none overflow-auto">
             <Sidebar />
-            <section className={"bg-slate-700 w-full h-screen p-8"}>
+            <section className={"bg-slate-700 w-full max-h-screen h-full p-8 overflow-auto scroll-auto overscroll-auto"}>
+                <PostsList posts={posts as Post[]} />
                 <PostsList posts={posts as Post[]} />
             </section>
         </main>

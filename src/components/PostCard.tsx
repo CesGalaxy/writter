@@ -19,7 +19,7 @@ export default function PostCard({
     const [isFollowed, setIsFollowed] = useState(false);
 
     return (
-        <Card className="max-w-[340px]">
+        <Card className="w-full md:max-w-[340px]">
             <CardHeader className="justify-between gap-8">
                 <div className="flex gap-4">
                     <Avatar isBordered radius="full" size="md" src={avatar_url}/>
